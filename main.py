@@ -10,7 +10,7 @@ options.headless = True
 
 
 def openBrowser():
-    url = "https://www.google.com/"
+    url = "https://www.fast.com/"
     # open headless browser
 
     driver = webdriver.Chrome(service=s, options=options)
@@ -28,7 +28,7 @@ def saveScreenshot(driver):
 def run(period):
     while True:
         driver = openBrowser()
-        time.sleep(3)
+        time.sleep(40)
         saveScreenshot(driver)
         driver.quit()
         time.sleep(period)
