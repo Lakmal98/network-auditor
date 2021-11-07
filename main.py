@@ -14,6 +14,7 @@ def openBrowser():
     # open headless browser
 
     driver = webdriver.Chrome(service=s, options=options)
+    # driver = webdriver.Chrome('./chromedriver', options=options) // Deprecated
     driver.maximize_window()
     driver.get(url)
     return driver
