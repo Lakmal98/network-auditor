@@ -36,9 +36,8 @@ def run(period):
             '#speed-value')
         speedUnits = driver.find_element_by_css_selector(
             '#speed-units')
-        print(f"{speedValue.text} {speedUnits.text}")
         # append to file
-        with open("speed.txt", "a") as f:
+        with open("speed.csv", "a") as f:
             f.write(
                 f"{time.strftime('%Y-%m-%d-%H-%M-%S')}, {speedValue.text}, {speedUnits.text}\n")
 

@@ -1,4 +1,4 @@
 screenshot_*
 chromedriver
 *.png
-speed.txt
+speed.csv
