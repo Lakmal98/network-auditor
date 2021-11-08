@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 import time
 
-s = Service(ChromeDriverManager().install())
+# s = Service(ChromeDriverManager().install())
 options = Options()
 options.headless = True
 
@@ -13,16 +13,16 @@ def openBrowser():
     url = "https://www.fast.com/"
     # open headless browser
 
-    driver = webdriver.Chrome(service=s, options=options)
-    # driver = webdriver.Chrome('./chromedriver', options=options) // Deprecated
+    # driver = webdriver.Chrome(service=s, options=options)
+    driver = webdriver.Chrome('./chromedriver', options=options)  # Deprecated
     driver.maximize_window()
     driver.get(url)
     return driver
 
 
 def saveScreenshot(driver):
-    # save screenshot with timestamp as name
-    driver.save_screenshot("screenshot_" + str(time.time()) + ".png")
+    # save screenshot with date and time as name
+    driver.save_screenshot(f"{time.strftime('%Y-%m-%d-%H-%M-%S')}.png")
 
 
 # run function every x seconds
