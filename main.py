@@ -6,7 +6,7 @@ import time
 
 # s = Service(ChromeDriverManager().install())
 options = Options()
-options.headless = True
+options.headless = False
 
 
 def openBrowser():
@@ -31,6 +31,17 @@ def run(period):
         driver = openBrowser()
         time.sleep(40)
         saveScreenshot(driver)
+        #  access the page and read a css element
+        speedValue = driver.find_element_by_css_selector(
+            '#speed-value')
+        speedUnits = driver.find_element_by_css_selector(
+            '#speed-units')
+        print(f"{speedValue.text} {speedUnits.text}")
+        # append to file
+        with open("speed.txt", "a") as f:
+            f.write(
+                f"{time.strftime('%Y-%m-%d-%H-%M-%S')}, {speedValue.text}, {speedUnits.text}\n")
+
         driver.quit()
         time.sleep(period)
 
