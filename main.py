@@ -6,7 +6,7 @@ import time
 
 # s = Service(ChromeDriverManager().install())
 options = Options()
-options.headless = False
+options.headless = True
 
 
 def openBrowser():
