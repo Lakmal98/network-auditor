@@ -33,9 +33,9 @@ def run(period):
         saveScreenshot(driver)
         #  access the page and read a css element
         speedValue = driver.find_element_by_css_selector(
-            '#speed-value')
+            '#speed-value')  # Deprecated
         speedUnits = driver.find_element_by_css_selector(
-            '#speed-units')
+            '#speed-units')  # Deprecated
         # append to file
         with open("speed.csv", "a") as f:
             f.write(
