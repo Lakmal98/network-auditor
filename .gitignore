@@ -1,1 +1,3 @@
-screenshot_*
+chromedriver
+*.png
+speed.csv
