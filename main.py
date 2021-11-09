@@ -6,7 +6,7 @@ import time
 
 # s = Service(ChromeDriverManager().install())
 options = Options()
-options.headless = True
+options.headless = False
 
 
 def openBrowser():
@@ -22,7 +22,7 @@ def openBrowser():
 
 def saveScreenshot(driver):
     # save screenshot with date and time as name
-    driver.save_screenshot(f"{time.strftime('%Y-%m-%d-%H-%M-%S')}.png")
+    driver.save_screenshot(f"{time.strftime('%Y-%m-%d_%H-%M-%S')}.png")
 
 
 # run function every x seconds
@@ -39,7 +39,7 @@ def run(period):
         # append to file
         with open("speed.csv", "a") as f:
             f.write(
-                f"{time.strftime('%Y-%m-%d-%H-%M-%S')}, {speedValue.text}, {speedUnits.text}\n")
+                f"{time.strftime('%Y-%m-%d, %H-%M-%S')}, {speedValue.text}, {speedUnits.text}\n")
 
         driver.quit()
         time.sleep(period)
